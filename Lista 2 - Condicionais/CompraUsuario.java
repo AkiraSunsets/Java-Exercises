@@ -5,26 +5,31 @@
     um desconto de 10% ou o valor total da compra. Mostre o valor da compra baseado nessas
     condições.
  */
+import java.util.Scanner;
 
 public class CompraUsuario {
     public static void main(String[] args) {
+
         System.out.println("Seja bem vindo!");
-
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Qual produto você gostaria de comprar?");
-        String nomeProduto = nextLine();
+        String nomeProduto = scanner.nextLine();
+
         System.out.println("Qual o valor dele?");
-        int valorProduto = nextInt();
+        int valorProduto = scanner.nextInt();
+
         System.out.println("Quantas unidades você gostaria de comprar deste produto?");
-        int quantidadeProduto = nextInt();
+        int quantidadeProduto = scanner.nextInt();
 
-        if (quantidadeProduto >= 12){
-            double valorDesconto = (valorProduto / 100.0);
-            double valorFinal = valorProduto - valorDesconto;
-        } else if (quantidadeProduto < 12){
-            double valorProduto * quantidadeProduto;
+        double valorTotal;
+
+        if (quantidadeProduto <= 12){
+            valorTotal = quantidadeProduto * valorProduto;
+            System.out.println("O valor total da sua compra foi: " + valorTotal);
         }
-        {
-
+        else {
+            valorTotal = quantidadeProduto * valorProduto * 0.9;
+            System.out.println("O valor total da sua compra com desconto foi: " + valorTotal);
         }
     }
 }
