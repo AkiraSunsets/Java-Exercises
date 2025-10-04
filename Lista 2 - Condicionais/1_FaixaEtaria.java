@@ -32,5 +32,6 @@ public class FaixaEtaria {
         else{
             System.out.println("Entrada inválida");
         }
+        scanner.close();
     }
 }
