@@ -12,11 +12,12 @@ public class CompraUsuario {
 
         System.out.println("Seja bem vindo!");
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Qual produto você gostaria de comprar?");
         String nomeProduto = scanner.nextLine();
 
         System.out.println("Qual o valor dele?");
-        int valorProduto = scanner.nextInt();
+        double valorProduto = scanner.nextInt();
 
         System.out.println("Quantas unidades você gostaria de comprar deste produto?");
         int quantidadeProduto = scanner.nextInt();
@@ -25,11 +26,15 @@ public class CompraUsuario {
 
         if (quantidadeProduto <= 12){
             valorTotal = quantidadeProduto * valorProduto;
-            System.out.println("O valor total da sua compra foi: " + valorTotal);
+            System.out.println("O valor total da sua compra de " + quantidadeProduto +
+                    " unidade de " + nomeProduto + " foi: R$ " +valorTotal);
         }
         else {
             valorTotal = quantidadeProduto * valorProduto * 0.9;
-            System.out.println("O valor total da sua compra com desconto foi: " + valorTotal);
+            System.out.println("O valor total da sua compra de " + quantidadeProduto +
+                    " unidade de " + nomeProduto + " com desconto foi: R$ " +valorTotal
+                    + valorTotal);
         }
+        scanner.close();
     }
 }
