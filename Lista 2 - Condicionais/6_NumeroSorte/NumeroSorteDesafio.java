@@ -15,30 +15,35 @@ import java.util.Random;
 public class NumeroSorteDesafio {
     public static void main(String[] args) {
 
-        System.out.println("Seja bem vindo ao Teste sua Sorte!");
+        System.out.println("Seja bem vindo ao Teste sua Sorte!\n");
+        System.out.println("-----------------------------------");
 
-        System.out.println("-----------------------------------\n");
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Digite um número (1 a 100): ");
-        int numero = scanner.nextInt();
-
         Random random = new Random();
+
         int min = 1;
         int max = 100;
 
         int numeroAleatorio = random.nextInt((max - min) + 1) + min;
+
         boolean acertou = false;
-        
-        for (int tentativa = 1; tentativa <= 3; tentativa++){
-            System.out.println("Tentativa: " + tentativa + "Digite um número (1 a 100): ");
+
+        for (int tentativa = 1; tentativa <= 3; tentativa++) {
+            System.out.print("Tentativa: " + tentativa + " | Digite um número (1 a 100): ");
             int numero = scanner.nextInt();
+
+            if (numero == numeroAleatorio) {
+                System.out.println("Você acertou! O número da sorte era: " + numeroAleatorio);
+                acertou = true;
+                break;
+            } else {
+                System.out.println("Você errou!");
+            }
         }
-        if (numero == numeroAleatorio){
-            System.out.println("Você acertou!");
+        if (acertou == false) {
+            System.out.println("Suas chances acabaram! O número da sorte era: " + numeroAleatorio);
         }
-        else{
-            System.out.println("Você errou!");
-        }
+        System.out.println("-----------------------------------");
+        scanner.close();
     }
 }
