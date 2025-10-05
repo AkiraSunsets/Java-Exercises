@@ -4,6 +4,8 @@
     Exiba a pergunta e as alternativas correspondentes
     Caso o usuário acerte a resposta, informe "Você acertou, pode retirar seu bônus"
     Caso ele erre, informe "Você não acertou, mas tente novamente numa próxima"
+
+    (Desafio feito aqui junto :D)
  */
 
 import java.util.Scanner;
