@@ -1,0 +1,66 @@
+/*
+    Peça a opinião dos fãs de um determinado filme
+    sendo que o fa deve responder:
+    1 - Ótimo
+    2 - Bom
+    3 - Ruim
+
+    Ao final mostrar:
+    Quantos responderam ótimo e quanto isso representa em % de todos os respondentes
+    Quantos responderam bom e quanto isso representa em % de todos os respondentes
+    Quantas pessoas responderam all
+ */
+
+import java.util.Scanner;
+
+public class FilmeFas {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Seja bem vindo!\n");
+        System.out.println("-----------------");
+        System.out.println("Avalie o filme: ");
+        System.out.println("1 - Ótimo");
+        System.out.println("2 - Bom");
+        System.out.println("3 - Ruim");
+        System.out.println("-----------------");
+
+        int totalRespondentes = 5;
+        int otimo = 0;
+        int bom = 0;
+        int ruim = 0;
+
+        for (int i = 1; i <= totalRespondentes; i++) {
+            System.out.println("Resposta do fã " + i + ":");
+            int resposta = scanner.nextInt();
+
+            switch (resposta) {
+                case 1:
+                    otimo++;
+                    break;
+                case 2:
+                    bom++;
+                    break;
+                case 3:
+                    ruim++;
+                    break;
+                default:
+                    System.out.println("Resposta invalida! Digite (1,2 ou 3");
+            }
+        }
+
+        double porcentagemOtimo = (otimo * 100.0) / totalRespondentes;
+        double porcentagemBom = (bom * 100.0) /totalRespondentes;
+        double porcentagemRuim = (ruim * 100.0) /totalRespondentes;
+        double media = (bom + ruim + bom + ruim) / 3;
+
+        System.out.println("\n========= RESULTADOS ===========");
+        System.out.println("Ótimo: " + otimo + "(" + porcentagemOtimo + " %)");
+        System.out.println("Bom: " + bom + "(" + porcentagemBom + " %)");
+        System.out.println("Ruim: " + ruim + "(" + porcentagemRuim + "%");
+        System.out.println("Ao total" + totalRespondentes + "responderam a enquete.");
+        System.out.println("A media das respostas dos usuários é: " + media);
+        scanner.close();
+    }
+}
