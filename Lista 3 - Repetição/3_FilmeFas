@@ -59,7 +59,7 @@ public class FilmeFas {
         System.out.println("Ótimo: " + otimo + "(" + porcentagemOtimo + " %)");
         System.out.println("Bom: " + bom + "(" + porcentagemBom + " %)");
         System.out.println("Ruim: " + ruim + "(" + porcentagemRuim + "%");
-        System.out.println("Ao total" + totalRespondentes + "responderam a enquete.");
+        System.out.println("Ao total " + totalRespondentes + " pessoas responderam a enquete.");
         System.out.println("A media das respostas dos usuários é: " + media);
         scanner.close();
     }
